@@ -49,7 +49,7 @@ extension Date {
             guard let nanoseconds = components.nanosecond else {
                 return nil
             }
-            return Int(Double(nanoseconds) / 1_000_000.0)
+            return Int((Double(nanoseconds) / 1_000_000.0).rounded(.toNearestOrAwayFromZero))
         }
     }
     
