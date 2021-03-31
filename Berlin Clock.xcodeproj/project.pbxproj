@@ -22,6 +22,8 @@
 		470540582614844A0023F883 /* ClockMultiHourTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470540572614844A0023F883 /* ClockMultiHourTests.swift */; };
 		4705406026148C7D0023F883 /* ClockSingleHour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4705405F26148C7D0023F883 /* ClockSingleHour.swift */; };
 		4705406526148CCD0023F883 /* ClockSingleHourTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4705406426148CCD0023F883 /* ClockSingleHourTests.swift */; };
+		4705406D261490FD0023F883 /* ClockMultiMinute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4705406C261490FD0023F883 /* ClockMultiMinute.swift */; };
+		470540722614911B0023F883 /* ClockMultiMinuteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470540712614911B0023F883 /* ClockMultiMinuteTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		470540572614844A0023F883 /* ClockMultiHourTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockMultiHourTests.swift; sourceTree = "<group>"; };
 		4705405F26148C7D0023F883 /* ClockSingleHour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockSingleHour.swift; sourceTree = "<group>"; };
 		4705406426148CCD0023F883 /* ClockSingleHourTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockSingleHourTests.swift; sourceTree = "<group>"; };
+		4705406C261490FD0023F883 /* ClockMultiMinute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockMultiMinute.swift; sourceTree = "<group>"; };
+		470540712614911B0023F883 /* ClockMultiMinuteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockMultiMinuteTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +125,7 @@
 				47053FF3261479660023F883 /* LaunchScreen.storyboard */,
 				47054052261483F10023F883 /* ClockMultiHour.swift */,
 				4705405F26148C7D0023F883 /* ClockSingleHour.swift */,
+				4705406C261490FD0023F883 /* ClockMultiMinute.swift */,
 				4705404D261483BE0023F883 /* Clock.swift */,
 				4705403526147B550023F883 /* DateUtils.swift */,
 				47053FF6261479660023F883 /* Info.plist */,
@@ -134,6 +139,7 @@
 				47053FFF261479660023F883 /* Berlin_ClockTests.swift */,
 				470540572614844A0023F883 /* ClockMultiHourTests.swift */,
 				4705406426148CCD0023F883 /* ClockSingleHourTests.swift */,
+				470540712614911B0023F883 /* ClockMultiMinuteTests.swift */,
 				4705404226147BA70023F883 /* DateUtilsTest.swift */,
 				47054001261479660023F883 /* Info.plist */,
 			);
@@ -281,6 +287,7 @@
 			files = (
 				47054053261483F10023F883 /* ClockMultiHour.swift in Sources */,
 				47053FED261479650023F883 /* ViewController.swift in Sources */,
+				4705406D261490FD0023F883 /* ClockMultiMinute.swift in Sources */,
 				4705403626147B550023F883 /* DateUtils.swift in Sources */,
 				4705406026148C7D0023F883 /* ClockSingleHour.swift in Sources */,
 				47053FE9261479650023F883 /* AppDelegate.swift in Sources */,
@@ -293,6 +300,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				470540722614911B0023F883 /* ClockMultiMinuteTests.swift in Sources */,
 				4705406526148CCD0023F883 /* ClockSingleHourTests.swift in Sources */,
 				47054000261479660023F883 /* Berlin_ClockTests.swift in Sources */,
 				4705404326147BA70023F883 /* DateUtilsTest.swift in Sources */,
