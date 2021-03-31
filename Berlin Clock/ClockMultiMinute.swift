@@ -17,10 +17,19 @@ class ClockMultiMinute: ClockLampCountableProtocol {
     }
     
     func numberOfLamps() -> Int {
-        return 0
+        guard let minuteValue = date.component(.minute) else {
+            return 0
+        }
+        return minuteValue / 5
     }
     
     func colorForLamp(at index: Int) -> UIColor {
-        return .black
+        if (index > numberOfLamps()) {
+            return .white
+        }
+        if (index % 3 == 0) {
+            return .red
+        }
+        return .yellow
     }
 }
