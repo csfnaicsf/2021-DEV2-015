@@ -202,8 +202,5 @@ class ClockMultiHourTests: XCTestCase {
         for index in 1...counter {
             XCTAssertEqual(multiHourClock.colorForLamp(at: index), .red, "Lamp \(counter) should be red at dinner")
         }
-        for index in (counter + 1)...4 {
-            XCTAssertEqual(multiHourClock.colorForLamp(at: index), .white, "Lamp \(counter) should be white at dinner")
-        }
     }
 }
