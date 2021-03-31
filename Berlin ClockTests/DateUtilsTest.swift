@@ -100,6 +100,7 @@ class DateUtilsTest: XCTestCase {
         XCTAssertEqual(dateWithValidHourLeadingZero!.component(.hour), 5, "The hour of the date should be the same as the hour in the string")
         XCTAssertEqual(dateWithValidHourLeadingZero!.component(.minute), 22, "The minutes of the date should be the same as the minutes in the string")
         XCTAssertEqual(dateWithValidHourLeadingZero!.component(.second), 0, "The seconds of the date should be 0 if not specified in string")
+        XCTAssertEqual(dateWithValidHourLeadingZero!.component(.milisecond), 0, "The miliseconds of the date should be 0 if not specified in string")
         
         let dateWithValidHourNoLeadingZero = Date(from: "2021-03-31 5:22", format: "yyyy-MM-dd H:mm")
         XCTAssertNotNil(dateWithValidHourNoLeadingZero, "A valid date should be created from a date format specifying a valid date")
@@ -109,6 +110,7 @@ class DateUtilsTest: XCTestCase {
         XCTAssertEqual(dateWithValidHourNoLeadingZero!.component(.hour), 5, "The hour of the date should be the same as the hour in the string")
         XCTAssertEqual(dateWithValidHourNoLeadingZero!.component(.minute), 22, "The minutes of the date should be the same as the minutes in the string")
         XCTAssertEqual(dateWithValidHourNoLeadingZero!.component(.second), 0, "The seconds of the date should be 0 if not specified in string")
+        XCTAssertEqual(dateWithValidHourNoLeadingZero!.component(.milisecond), 0, "The miliseconds of the date should be 0 if not specified in string")
         
         let dateWithInvalidHour = Date(from: "2021-03-31 24:00", format: "yyyy-MM-dd HH:mm")
         XCTAssertNil(dateWithInvalidHour, "A nil date should be created from a date format specifying an invalid hour")
@@ -138,6 +140,16 @@ class DateUtilsTest: XCTestCase {
         XCTAssertEqual(validDateWithMiliseconds!.component(.minute), 42, "The minutes of the date should be the same as the minutes in the string")
         XCTAssertEqual(validDateWithMiliseconds!.component(.second), 30, "The seconds of the date should be the same as the seconds in the string")
         XCTAssertEqual(validDateWithMiliseconds!.component(.milisecond), 123, "The miliseconds of the date should be the same as the miliseconds in the string")
+        
+        let validDateWithMaxMiliseconds = Date(from: "2021-03-31 21:42:30.999", format: "yyyy-MM-dd HH:mm:ss.SSS")
+        XCTAssertNotNil(validDateWithMaxMiliseconds, "A valid date should be created from a date format specifying a valid date")
+        XCTAssertEqual(validDateWithMaxMiliseconds!.component(.year), 2021, "The year of the date should be the same as the year in the string")
+        XCTAssertEqual(validDateWithMaxMiliseconds!.component(.month), 3, "The month of the date should be the same as the month in the string")
+        XCTAssertEqual(validDateWithMaxMiliseconds!.component(.day), 31, "The day of the date should be the same as the day in the string")
+        XCTAssertEqual(validDateWithMaxMiliseconds!.component(.hour), 21, "The hour of the date should be the same as the hour in the string")
+        XCTAssertEqual(validDateWithMaxMiliseconds!.component(.minute), 42, "The minutes of the date should be the same as the minutes in the string")
+        XCTAssertEqual(validDateWithMaxMiliseconds!.component(.second), 30, "The seconds of the date should be the same as the seconds in the string")
+        XCTAssertEqual(validDateWithMaxMiliseconds!.component(.milisecond), 999, "The miliseconds of the date should be the same as the miliseconds in the string")
     }
     
     func testDate() throws {
