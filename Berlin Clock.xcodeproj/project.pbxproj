@@ -20,6 +20,7 @@
 		4705404E261483BE0023F883 /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4705404D261483BE0023F883 /* Clock.swift */; };
 		47054053261483F10023F883 /* ClockMultiHour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47054052261483F10023F883 /* ClockMultiHour.swift */; };
 		470540582614844A0023F883 /* ClockMultiHourTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470540572614844A0023F883 /* ClockMultiHourTests.swift */; };
+		4705406026148C7D0023F883 /* ClockSingleHour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4705405F26148C7D0023F883 /* ClockSingleHour.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		4705404D261483BE0023F883 /* Clock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clock.swift; sourceTree = "<group>"; };
 		47054052261483F10023F883 /* ClockMultiHour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockMultiHour.swift; sourceTree = "<group>"; };
 		470540572614844A0023F883 /* ClockMultiHourTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockMultiHourTests.swift; sourceTree = "<group>"; };
+		4705405F26148C7D0023F883 /* ClockSingleHour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockSingleHour.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 				47053FF1261479660023F883 /* Assets.xcassets */,
 				47053FF3261479660023F883 /* LaunchScreen.storyboard */,
 				47054052261483F10023F883 /* ClockMultiHour.swift */,
+				4705405F26148C7D0023F883 /* ClockSingleHour.swift */,
 				4705404D261483BE0023F883 /* Clock.swift */,
 				4705403526147B550023F883 /* DateUtils.swift */,
 				47053FF6261479660023F883 /* Info.plist */,
@@ -276,6 +279,7 @@
 				47054053261483F10023F883 /* ClockMultiHour.swift in Sources */,
 				47053FED261479650023F883 /* ViewController.swift in Sources */,
 				4705403626147B550023F883 /* DateUtils.swift in Sources */,
+				4705406026148C7D0023F883 /* ClockSingleHour.swift in Sources */,
 				47053FE9261479650023F883 /* AppDelegate.swift in Sources */,
 				47053FEB261479650023F883 /* SceneDelegate.swift in Sources */,
 				4705404E261483BE0023F883 /* Clock.swift in Sources */,
