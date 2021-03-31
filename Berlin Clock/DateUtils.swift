@@ -46,7 +46,10 @@ extension Date {
         case .second:
             return components.second
         case .nanosecond:
-            return components.nanosecond
+            guard let nanoseconds = components.nanosecond else {
+                return nil
+            }
+            return nanoseconds/1000
         }
     }
     

@@ -75,7 +75,7 @@ class DateUtilsTest: XCTestCase {
         XCTAssertNotNil(dateWithValidHourLeadingZero, "A valid date should be created from a date format specifying a valid date")
         XCTAssertEqual(dateWithValidHourLeadingZero!.component(.year), 2021, "The year of the date should be the same as the year in the string")
         XCTAssertEqual(dateWithValidHourLeadingZero!.component(.month), 3, "The month of the date should be the same as the month in the string")
-        XCTAssertEqual(dateWithValidHourLeadingZero!.component(.day), 29, "The day of the date should be the same as the day in the string")
+        XCTAssertEqual(dateWithValidHourLeadingZero!.component(.day), 31, "The day of the date should be the same as the day in the string")
         XCTAssertEqual(dateWithValidHourLeadingZero!.component(.hour), 5, "The hour of the date should be the same as the hour in the string")
         XCTAssertEqual(dateWithValidHourLeadingZero!.component(.minute), 0, "The minutes of the date should be the same as the minutes in the string")
         
@@ -83,7 +83,7 @@ class DateUtilsTest: XCTestCase {
         XCTAssertNotNil(dateWithValidHourNoLeadingZero, "A valid date should be created from a date format specifying a valid date")
         XCTAssertEqual(dateWithValidHourNoLeadingZero!.component(.year), 2021, "The year of the date should be the same as the year in the string")
         XCTAssertEqual(dateWithValidHourNoLeadingZero!.component(.month), 3, "The month of the date should be the same as the month in the string")
-        XCTAssertEqual(dateWithValidHourNoLeadingZero!.component(.day), 29, "The day of the date should be the same as the day in the string")
+        XCTAssertEqual(dateWithValidHourNoLeadingZero!.component(.day), 31, "The day of the date should be the same as the day in the string")
         XCTAssertEqual(dateWithValidHourNoLeadingZero!.component(.hour), 5, "The hour of the date should be the same as the hour in the string")
         XCTAssertEqual(dateWithValidHourNoLeadingZero!.component(.minute), 0, "The minutes of the date should be the same as the minutes in the string")
        
@@ -96,7 +96,7 @@ class DateUtilsTest: XCTestCase {
         XCTAssertNotNil(dateWithValidHourLeadingZero, "A valid date should be created from a date format specifying a valid date")
         XCTAssertEqual(dateWithValidHourLeadingZero!.component(.year), 2021, "The year of the date should be the same as the year in the string")
         XCTAssertEqual(dateWithValidHourLeadingZero!.component(.month), 3, "The month of the date should be the same as the month in the string")
-        XCTAssertEqual(dateWithValidHourLeadingZero!.component(.day), 29, "The day of the date should be the same as the day in the string")
+        XCTAssertEqual(dateWithValidHourLeadingZero!.component(.day), 31, "The day of the date should be the same as the day in the string")
         XCTAssertEqual(dateWithValidHourLeadingZero!.component(.hour), 5, "The hour of the date should be the same as the hour in the string")
         XCTAssertEqual(dateWithValidHourLeadingZero!.component(.minute), 22, "The minutes of the date should be the same as the minutes in the string")
         XCTAssertEqual(dateWithValidHourLeadingZero!.component(.second), 0, "The seconds of the date should be 0 if not specified in string")
@@ -105,7 +105,7 @@ class DateUtilsTest: XCTestCase {
         XCTAssertNotNil(dateWithValidHourNoLeadingZero, "A valid date should be created from a date format specifying a valid date")
         XCTAssertEqual(dateWithValidHourNoLeadingZero!.component(.year), 2021, "The year of the date should be the same as the year in the string")
         XCTAssertEqual(dateWithValidHourNoLeadingZero!.component(.month), 3, "The month of the date should be the same as the month in the string")
-        XCTAssertEqual(dateWithValidHourNoLeadingZero!.component(.day), 29, "The day of the date should be the same as the day in the string")
+        XCTAssertEqual(dateWithValidHourNoLeadingZero!.component(.day), 31, "The day of the date should be the same as the day in the string")
         XCTAssertEqual(dateWithValidHourNoLeadingZero!.component(.hour), 5, "The hour of the date should be the same as the hour in the string")
         XCTAssertEqual(dateWithValidHourNoLeadingZero!.component(.minute), 22, "The minutes of the date should be the same as the minutes in the string")
         XCTAssertEqual(dateWithValidHourNoLeadingZero!.component(.second), 0, "The seconds of the date should be 0 if not specified in string")
@@ -115,6 +115,28 @@ class DateUtilsTest: XCTestCase {
         
         let dateWithInvalidMinute = Date(from: "2021-03-31 24:60", format: "yyyy-MM-dd HH:mm")
         XCTAssertNil(dateWithInvalidMinute, "A nil date should be created from a date format specifying an invalid hour")
+    }
+    
+    func testNanoseconds() throws {
+        let validDateWithNoNanoseconds = Date(from: "2021-03-31 21:42:30.000000", format: "yyyy-MM-dd HH:mm:ss.SSSSSS")
+        XCTAssertNotNil(validDateWithNoNanoseconds, "A valid date should be created from a date format specifying a valid date")
+        XCTAssertEqual(validDateWithNoNanoseconds!.component(.year), 2021, "The year of the date should be the same as the year in the string")
+        XCTAssertEqual(validDateWithNoNanoseconds!.component(.month), 3, "The month of the date should be the same as the month in the string")
+        XCTAssertEqual(validDateWithNoNanoseconds!.component(.day), 31, "The day of the date should be the same as the day in the string")
+        XCTAssertEqual(validDateWithNoNanoseconds!.component(.hour), 21, "The hour of the date should be the same as the hour in the string")
+        XCTAssertEqual(validDateWithNoNanoseconds!.component(.minute), 42, "The minutes of the date should be the same as the minutes in the string")
+        XCTAssertEqual(validDateWithNoNanoseconds!.component(.second), 30, "The seconds of the date should be the same as the seconds in the string")
+        XCTAssertEqual(validDateWithNoNanoseconds!.component(.nanosecond), 0, "The nanoseconds of the date should be the same as the nanoseconds in the string")
+        
+        let validDateWithNanoseconds = Date(from: "2021-03-31 21:42:30.123456", format: "yyyy-MM-dd HH:mm:ss.SSSSSS")
+        XCTAssertNotNil(validDateWithNanoseconds, "A valid date should be created from a date format specifying a valid date")
+        XCTAssertEqual(validDateWithNanoseconds!.component(.year), 2021, "The year of the date should be the same as the year in the string")
+        XCTAssertEqual(validDateWithNanoseconds!.component(.month), 3, "The month of the date should be the same as the month in the string")
+        XCTAssertEqual(validDateWithNanoseconds!.component(.day), 31, "The day of the date should be the same as the day in the string")
+        XCTAssertEqual(validDateWithNanoseconds!.component(.hour), 21, "The hour of the date should be the same as the hour in the string")
+        XCTAssertEqual(validDateWithNanoseconds!.component(.minute), 42, "The minutes of the date should be the same as the minutes in the string")
+        XCTAssertEqual(validDateWithNanoseconds!.component(.second), 30, "The seconds of the date should be the same as the seconds in the string")
+        XCTAssertEqual(validDateWithNanoseconds!.component(.nanosecond), 123456, "The nanoseconds of the date should be the same as the nanoseconds in the string")
     }
     
     func testDate() throws {
