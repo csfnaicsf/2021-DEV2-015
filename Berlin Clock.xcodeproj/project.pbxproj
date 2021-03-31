@@ -21,6 +21,7 @@
 		47054053261483F10023F883 /* ClockMultiHour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47054052261483F10023F883 /* ClockMultiHour.swift */; };
 		470540582614844A0023F883 /* ClockMultiHourTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470540572614844A0023F883 /* ClockMultiHourTests.swift */; };
 		4705406026148C7D0023F883 /* ClockSingleHour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4705405F26148C7D0023F883 /* ClockSingleHour.swift */; };
+		4705406526148CCD0023F883 /* ClockSingleHourTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4705406426148CCD0023F883 /* ClockSingleHourTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		47054052261483F10023F883 /* ClockMultiHour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockMultiHour.swift; sourceTree = "<group>"; };
 		470540572614844A0023F883 /* ClockMultiHourTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockMultiHourTests.swift; sourceTree = "<group>"; };
 		4705405F26148C7D0023F883 /* ClockSingleHour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockSingleHour.swift; sourceTree = "<group>"; };
+		4705406426148CCD0023F883 /* ClockSingleHourTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockSingleHourTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 			children = (
 				47053FFF261479660023F883 /* Berlin_ClockTests.swift */,
 				470540572614844A0023F883 /* ClockMultiHourTests.swift */,
+				4705406426148CCD0023F883 /* ClockSingleHourTests.swift */,
 				4705404226147BA70023F883 /* DateUtilsTest.swift */,
 				47054001261479660023F883 /* Info.plist */,
 			);
@@ -290,6 +293,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4705406526148CCD0023F883 /* ClockSingleHourTests.swift in Sources */,
 				47054000261479660023F883 /* Berlin_ClockTests.swift in Sources */,
 				4705404326147BA70023F883 /* DateUtilsTest.swift in Sources */,
 				470540582614844A0023F883 /* ClockMultiHourTests.swift in Sources */,
