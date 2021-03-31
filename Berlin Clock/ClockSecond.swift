@@ -16,6 +16,9 @@ class ClockSecond: ClockLampProtocol {
     }
     
     func colorForLamp() -> UIColor {
-        return .black
+        guard let secondsValue = date.component(.second) else {
+            return .white
+        }
+        return secondsValue % 2 == 0 ? .red : .white
     }
 }
