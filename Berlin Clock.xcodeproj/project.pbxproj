@@ -15,6 +15,8 @@
 		47053FF5261479660023F883 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47053FF3261479660023F883 /* LaunchScreen.storyboard */; };
 		47054000261479660023F883 /* Berlin_ClockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47053FFF261479660023F883 /* Berlin_ClockTests.swift */; };
 		4705400B261479660023F883 /* Berlin_ClockUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4705400A261479660023F883 /* Berlin_ClockUITests.swift */; };
+		4705403626147B550023F883 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4705403526147B550023F883 /* DateUtils.swift */; };
+		4705404326147BA70023F883 /* DateUtilsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4705404226147BA70023F883 /* DateUtilsTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		47054006261479660023F883 /* Berlin ClockUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Berlin ClockUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4705400A261479660023F883 /* Berlin_ClockUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Berlin_ClockUITests.swift; sourceTree = "<group>"; };
 		4705400C261479660023F883 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4705403526147B550023F883 /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
+		4705404226147BA70023F883 /* DateUtilsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtilsTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,7 @@
 				47053FF1261479660023F883 /* Assets.xcassets */,
 				47053FF3261479660023F883 /* LaunchScreen.storyboard */,
 				47053FF6261479660023F883 /* Info.plist */,
+				4705403526147B550023F883 /* DateUtils.swift */,
 			);
 			path = "Berlin Clock";
 			sourceTree = "<group>";
@@ -114,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				47053FFF261479660023F883 /* Berlin_ClockTests.swift */,
+				4705404226147BA70023F883 /* DateUtilsTest.swift */,
 				47054001261479660023F883 /* Info.plist */,
 			);
 			path = "Berlin ClockTests";
@@ -259,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				47053FED261479650023F883 /* ViewController.swift in Sources */,
+				4705403626147B550023F883 /* DateUtils.swift in Sources */,
 				47053FE9261479650023F883 /* AppDelegate.swift in Sources */,
 				47053FEB261479650023F883 /* SceneDelegate.swift in Sources */,
 			);
@@ -269,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				47054000261479660023F883 /* Berlin_ClockTests.swift in Sources */,
+				4705404326147BA70023F883 /* DateUtilsTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,6 +485,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T2HK2Y4E5M;
 				INFOPLIST_FILE = "Berlin ClockTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -498,6 +507,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T2HK2Y4E5M;
 				INFOPLIST_FILE = "Berlin ClockTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -518,6 +528,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T2HK2Y4E5M;
 				INFOPLIST_FILE = "Berlin ClockUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -537,6 +548,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T2HK2Y4E5M;
 				INFOPLIST_FILE = "Berlin ClockUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
