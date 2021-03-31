@@ -43,7 +43,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         configureComponents()
         updateInterface()
-        scheduleTimer()
+        synchronize()
     }
     
     func configureComponents() {
@@ -84,6 +84,19 @@ class ViewController: UIViewController {
         }
         for (index, view) in minutes1Block.enumerated() {
             view.backgroundColor = clock.singleMinute.colorForLamp(at: index + 1)
+        }
+    }
+    
+    // Schedules the timer to run as close as possible to the next second
+    // This way, regardless of when the app is started, the interface will be updated when the system clock's seconds change
+    func synchronize() {
+        guard let currentMiliseconds = Date().component(.milisecond) else {
+            scheduleTimer()
+            return
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + (1 - Double(currentMiliseconds)/1000.0)) {
+            self.updateInterface()
+            self.scheduleTimer()
         }
     }
     
