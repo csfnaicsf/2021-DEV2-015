@@ -22,6 +22,28 @@ protocol ClockLampProtocol: ClockProtocol {
     func colorForLamp() -> UIColor
 }
 
-struct Clock {
+class Clock {
+    private var date: Date {
+        didSet {
+            multiHour.date = date
+            singleHour.date = date
+            multiMinute.date = date
+            singleMinute.date = date
+            second.date = date
+        }
+    }
+    private(set) var multiHour: ClockMultiHour
+    private(set) var singleHour: ClockSingleHour
+    private(set) var multiMinute: ClockMultiMinute
+    private(set) var singleMinute: ClockSingleMinute
+    private(set) var second: ClockSecond
     
+    required init(date: Date) {
+        multiHour = ClockMultiHour(date: date)
+        singleHour = ClockSingleHour(date: date)
+        multiMinute = ClockMultiMinute(date: date)
+        singleMinute = ClockSingleMinute(date: date)
+        second = ClockSecond(date: date)
+        self.date = date
+    }
 }
