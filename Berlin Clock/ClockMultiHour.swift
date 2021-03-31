@@ -16,6 +16,9 @@ class ClockMultiHour: ClockLampCountableProtocol {
     }
     
     func numberOfLamps() -> Int {
-        return 0
+        guard let hourValue = date.component(.hour) else {
+            return 0
+        }
+        return hourValue / 5
     }
 }
