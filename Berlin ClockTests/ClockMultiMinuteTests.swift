@@ -20,8 +20,8 @@ class ClockMultiMinuteTests: XCTestCase {
     let date7 = Date(from: "00:37:00", format: "HH:mm:ss")
     let date8 = Date(from: "00:42:00", format: "HH:mm:ss")
     let date9 = Date(from: "00:48:00", format: "HH:mm:ss")
-    let date10 = Date(from: "00:02:54", format: "HH:mm:ss")
-    let date11 = Date(from: "00:02:58", format: "HH:mm:ss")
+    let date10 = Date(from: "00:54:00", format: "HH:mm:ss")
+    let date11 = Date(from: "00:58:00", format: "HH:mm:ss")
     
     
     override func setUpWithError() throws {
