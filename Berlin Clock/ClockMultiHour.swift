@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 class ClockMultiHour: ClockLampCountableProtocol {
     
@@ -20,5 +21,9 @@ class ClockMultiHour: ClockLampCountableProtocol {
             return 0
         }
         return hourValue / 5
+    }
+    
+    func colorForLamp(at index: Int) -> UIColor {
+        return .black
     }
 }

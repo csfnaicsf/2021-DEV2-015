@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol ClockProtocol {
     var date: Date { get set }
@@ -14,6 +15,11 @@ protocol ClockProtocol {
 
 protocol ClockLampCountableProtocol: ClockProtocol {
     func numberOfLamps() -> Int
+    func colorForLamp(at index: Int) -> UIColor
+}
+
+protocol ClockLampProtocol: ClockProtocol {
+    func colorForLamp() -> UIColor
 }
 
 struct Clock {

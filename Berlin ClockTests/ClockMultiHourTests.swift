@@ -19,102 +19,191 @@ class ClockMultiHourTests: XCTestCase {
     }
     
     func testNoLamp() throws {
+        let counter = 0
         guard let lowerHourDate = Date(from: "00:00:00", format: "HH:mm:ss") else {
             XCTFail("A valid date should be created from the given format")
             return
         }
-        XCTAssertEqual(ClockMultiHour(date: lowerHourDate).numberOfLamps(), 0, "No lamps should be on at midnight")
+        var multiHourClock = ClockMultiHour(date: lowerHourDate)
+        XCTAssertEqual(multiHourClock.numberOfLamps(), counter, "\(counter) lamps should be on at midnight")
+        for index in (counter + 1)...4 {
+            XCTAssertEqual(multiHourClock.colorForLamp(at: index), .white, "Lamp \(counter) should be white at midnight")
+        }
         
         guard let midHourDate = Date(from: "02:00:00", format: "HH:mm:ss") else {
             XCTFail("A valid date should be created from the given format")
             return
         }
-        XCTAssertEqual(ClockMultiHour(date: midHourDate).numberOfLamps(), 0, "No lamps should be on for sleepwalkers")
+        multiHourClock = ClockMultiHour(date: midHourDate)
+        XCTAssertEqual(multiHourClock.numberOfLamps(), counter, "\(counter) lamps should be on for sleepwalkers")
+        for index in (counter + 1)...4 {
+            XCTAssertEqual(multiHourClock.colorForLamp(at: index), .white, "Lamp \(counter) should be white at midnight")
+        }
         
         guard let upperHourDate = Date(from: "04:00:00", format: "HH:mm:ss") else {
             XCTFail("A valid date should be created from the given format")
             return
         }
-        XCTAssertEqual(ClockMultiHour(date: upperHourDate).numberOfLamps(), 0, "No lamps should be on for early birds")
+        multiHourClock = ClockMultiHour(date: upperHourDate)
+        XCTAssertEqual(multiHourClock.numberOfLamps(), counter, "\(counter) lamps should be on for early birds")
+        for index in (counter + 1)...4 {
+            XCTAssertEqual(multiHourClock.colorForLamp(at: index), .white, "Lamp \(counter) should be white at midnight")
+        }
     }
     
     func testFirstLamp() throws {
+        let counter = 1
         guard let lowerHourDate = Date(from: "05:00:00", format: "HH:mm:ss") else {
             XCTFail("A valid date should be created from the given format")
             return
         }
-        XCTAssertEqual(ClockMultiHour(date: lowerHourDate).numberOfLamps(), 1, "1 lamp should be on at sunrise")
+        var multiHourClock = ClockMultiHour(date: lowerHourDate)
+        XCTAssertEqual(multiHourClock.numberOfLamps(), counter, "\(counter) lamp should be on at sunrise")
+        for index in 1...counter {
+            XCTAssertEqual(multiHourClock.colorForLamp(at: index), .red, "Lamp \(counter) should be red at sunrise")
+        }
+        for index in (counter + 1)...4 {
+            XCTAssertEqual(multiHourClock.colorForLamp(at: index), .white, "Lamp \(counter) should be white at sunrise")
+        }
         
         guard let midHourDate = Date(from: "07:00:00", format: "HH:mm:ss") else {
             XCTFail("A valid date should be created from the given format")
             return
         }
-        XCTAssertEqual(ClockMultiHour(date: midHourDate).numberOfLamps(), 1, "1 lamp should be on for morning coffee")
+        multiHourClock = ClockMultiHour(date: midHourDate)
+        XCTAssertEqual(multiHourClock.numberOfLamps(), counter, "\(counter) lamp should be on at the morning coffee")
+        for index in 1...counter {
+            XCTAssertEqual(multiHourClock.colorForLamp(at: index), .red, "Lamp \(counter) should be red at the morning coffee")
+        }
+        for index in (counter + 1)...4 {
+            XCTAssertEqual(multiHourClock.colorForLamp(at: index), .white, "Lamp \(counter) should be white at the morning coffee")
+        }
         
         guard let upperHourDate = Date(from: "09:00:00", format: "HH:mm:ss") else {
             XCTFail("A valid date should be created from the given format")
             return
         }
-        XCTAssertEqual(ClockMultiHour(date: upperHourDate).numberOfLamps(), 1, "1 lamp should be on for stand up meeting")
+        multiHourClock = ClockMultiHour(date: upperHourDate)
+        XCTAssertEqual(multiHourClock.numberOfLamps(), counter, "\(counter) lamp should be on at the stand up meeting")
+        for index in 1...counter {
+            XCTAssertEqual(multiHourClock.colorForLamp(at: index), .red, "Lamp \(counter) should be red at the stand up meeting")
+        }
+        for index in (counter + 1)...4 {
+            XCTAssertEqual(multiHourClock.colorForLamp(at: index), .white, "Lamp \(counter) should be white at the stand up meeting")
+        }
     }
     
     func testSecondLamp() throws {
+        let counter = 2
         guard let lowerHourDate = Date(from: "10:00:00", format: "HH:mm:ss") else {
             XCTFail("A valid date should be created from the given format")
             return
         }
-        XCTAssertEqual(ClockMultiHour(date: lowerHourDate).numberOfLamps(), 2, "2 lamps should be on for coffee break")
+        var multiHourClock = ClockMultiHour(date: lowerHourDate)
+        XCTAssertEqual(multiHourClock.numberOfLamps(), counter, "\(counter) lamps should be on at the coffee break")
+        for index in 1...counter {
+            XCTAssertEqual(multiHourClock.colorForLamp(at: index), .red, "Lamp \(counter) should be red at the coffee break")
+        }
+        for index in (counter + 1)...4 {
+            XCTAssertEqual(multiHourClock.colorForLamp(at: index), .white, "Lamp \(counter) should be white at the coffee break")
+        }
         
         guard let midHourDate = Date(from: "12:00:00", format: "HH:mm:ss") else {
             XCTFail("A valid date should be created from the given format")
             return
         }
-        XCTAssertEqual(ClockMultiHour(date: midHourDate).numberOfLamps(), 2, "2 lamps should be on for lunch")
+        multiHourClock = ClockMultiHour(date: midHourDate)
+        XCTAssertEqual(multiHourClock.numberOfLamps(), counter, "\(counter) lamps should be on at lunch")
+        for index in 1...counter {
+            XCTAssertEqual(multiHourClock.colorForLamp(at: index), .red, "Lamp \(counter) should be red at lunch")
+        }
+        for index in (counter + 1)...4 {
+            XCTAssertEqual(multiHourClock.colorForLamp(at: index), .white, "Lamp \(counter) should be white at lunch")
+        }
         
         guard let upperHourDate = Date(from: "14:00:00", format: "HH:mm:ss") else {
             XCTFail("A valid date should be created from the given format")
             return
         }
-        XCTAssertEqual(ClockMultiHour(date: upperHourDate).numberOfLamps(), 2, "2 lamps should be on for sprint retrospective")
+        multiHourClock = ClockMultiHour(date: upperHourDate)
+        XCTAssertEqual(multiHourClock.numberOfLamps(), counter, "\(counter) lamps should be on at the sprint retrospective")
+        for index in 1...counter {
+            XCTAssertEqual(multiHourClock.colorForLamp(at: index), .red, "Lamp \(counter) should be red at the sprint retrospective")
+        }
+        for index in (counter + 1)...4 {
+            XCTAssertEqual(multiHourClock.colorForLamp(at: index), .white, "Lamp \(counter) should be white at the sprint retrospective")
+        }
     }
     
     func testThirdLamp() throws {
+        let counter = 3
         guard let lowerHourDate = Date(from: "15:00:00", format: "HH:mm:ss") else {
             XCTFail("A valid date should be created from the given format")
             return
         }
-        XCTAssertEqual(ClockMultiHour(date: lowerHourDate).numberOfLamps(), 3, "3 lamps should be on for pair programming")
+        var multiHourClock = ClockMultiHour(date: lowerHourDate)
+        XCTAssertEqual(multiHourClock.numberOfLamps(), counter, "\(counter) lamps should be on at the pair programming")
+        for index in 1...counter {
+            XCTAssertEqual(multiHourClock.colorForLamp(at: index), .red, "Lamp \(counter) should be red at the pair programming")
+        }
+        for index in (counter + 1)...4 {
+            XCTAssertEqual(multiHourClock.colorForLamp(at: index), .white, "Lamp \(counter) should be white at pair programming")
+        }
         
         guard let midHourDate = Date(from: "17:00:00", format: "HH:mm:ss") else {
             XCTFail("A valid date should be created from the given format")
             return
         }
-        XCTAssertEqual(ClockMultiHour(date: midHourDate).numberOfLamps(), 3, "3 lamps should be on for version release")
+        multiHourClock = ClockMultiHour(date: midHourDate)
+        XCTAssertEqual(multiHourClock.numberOfLamps(), counter, "\(counter) lamps should be on at the version release")
+        for index in 1...counter {
+            XCTAssertEqual(multiHourClock.colorForLamp(at: index), .red, "Lamp \(counter) should be red at the version release")
+        }
+        for index in (counter + 1)...4 {
+            XCTAssertEqual(multiHourClock.colorForLamp(at: index), .white, "Lamp \(counter) should be white at the version release")
+        }
         
         guard let upperHourDate = Date(from: "19:00:00", format: "HH:mm:ss") else {
             XCTFail("A valid date should be created from the given format")
             return
         }
-        XCTAssertEqual(ClockMultiHour(date: upperHourDate).numberOfLamps(), 3, "3 lamps should be on for dinner")
+        multiHourClock = ClockMultiHour(date: upperHourDate)
+        XCTAssertEqual(multiHourClock.numberOfLamps(), counter, "\(counter) lamps should be on at dinner")
+        for index in 1...counter {
+            XCTAssertEqual(multiHourClock.colorForLamp(at: index), .red, "Lamp \(counter) should be red at dinner")
+        }
+        for index in (counter + 1)...4 {
+            XCTAssertEqual(multiHourClock.colorForLamp(at: index), .white, "Lamp \(counter) should be white at dinner")
+        }
     }
     
     func testFourthLamp() throws {
+        let counter = 4
         guard let lowerHourDate = Date(from: "20:00:00", format: "HH:mm:ss") else {
             XCTFail("A valid date should be created from the given format")
             return
         }
-        XCTAssertEqual(ClockMultiHour(date: lowerHourDate).numberOfLamps(), 4, "4 lamps should be on when you're out of ideas")
+        var multiHourClock = ClockMultiHour(date: lowerHourDate)
+        XCTAssertEqual(multiHourClock.numberOfLamps(), counter, "\(counter) lamps should be on when you're out of ideas")
         
         guard let midHourDate = Date(from: "22:00:00", format: "HH:mm:ss") else {
             XCTFail("A valid date should be created from the given format")
             return
         }
-        XCTAssertEqual(ClockMultiHour(date: midHourDate).numberOfLamps(), 4, "4 lamps should be on for bed time")
+        multiHourClock = ClockMultiHour(date: midHourDate)
+        XCTAssertEqual(multiHourClock.numberOfLamps(), counter, "\(counter) lamps should be on at the bed time")
         
         guard let upperHourDate = Date(from: "23:59:59", format: "HH:mm:ss") else {
             XCTFail("A valid date should be created from the given format")
             return
         }
-        XCTAssertEqual(ClockMultiHour(date: upperHourDate).numberOfLamps(), 4, "4 lamps should be on at the end of the day")
+        multiHourClock = ClockMultiHour(date: upperHourDate)
+        XCTAssertEqual(multiHourClock.numberOfLamps(), counter, "\(counter) lamps should be on at the end of the day")
+        for index in 1...counter {
+            XCTAssertEqual(multiHourClock.colorForLamp(at: index), .red, "Lamp \(counter) should be red at dinner")
+        }
+        for index in (counter + 1)...4 {
+            XCTAssertEqual(multiHourClock.colorForLamp(at: index), .white, "Lamp \(counter) should be white at dinner")
+        }
     }
 }
