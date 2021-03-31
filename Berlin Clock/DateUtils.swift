@@ -10,7 +10,7 @@ import Foundation
 extension Date {
     
     enum DateComponentType {
-        case year, month, day, hour, minute, second, nanosecond
+        case year, month, day, hour, minute, second, milisecond
     }
     
     init?(from string: String, format: String) {
@@ -45,11 +45,11 @@ extension Date {
             return components.minute
         case .second:
             return components.second
-        case .nanosecond:
+        case .milisecond:
             guard let nanoseconds = components.nanosecond else {
                 return nil
             }
-            return nanoseconds/1000
+            return Int(Double(nanoseconds) / 1_000_000.0)
         }
     }
     

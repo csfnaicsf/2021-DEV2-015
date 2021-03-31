@@ -117,26 +117,27 @@ class DateUtilsTest: XCTestCase {
         XCTAssertNil(dateWithInvalidMinute, "A nil date should be created from a date format specifying an invalid hour")
     }
     
-    func testNanoseconds() throws {
-        let validDateWithNoNanoseconds = Date(from: "2021-03-31 21:42:30.000000", format: "yyyy-MM-dd HH:mm:ss.SSSSSS")
-        XCTAssertNotNil(validDateWithNoNanoseconds, "A valid date should be created from a date format specifying a valid date")
-        XCTAssertEqual(validDateWithNoNanoseconds!.component(.year), 2021, "The year of the date should be the same as the year in the string")
-        XCTAssertEqual(validDateWithNoNanoseconds!.component(.month), 3, "The month of the date should be the same as the month in the string")
-        XCTAssertEqual(validDateWithNoNanoseconds!.component(.day), 31, "The day of the date should be the same as the day in the string")
-        XCTAssertEqual(validDateWithNoNanoseconds!.component(.hour), 21, "The hour of the date should be the same as the hour in the string")
-        XCTAssertEqual(validDateWithNoNanoseconds!.component(.minute), 42, "The minutes of the date should be the same as the minutes in the string")
-        XCTAssertEqual(validDateWithNoNanoseconds!.component(.second), 30, "The seconds of the date should be the same as the seconds in the string")
-        XCTAssertEqual(validDateWithNoNanoseconds!.component(.nanosecond), 0, "The nanoseconds of the date should be the same as the nanoseconds in the string")
+    
+    func testMiliseconds() throws {
+        let validDateWithNoMiliseconds = Date(from: "2021-03-31 21:42:30.000", format: "yyyy-MM-dd HH:mm:ss.SSS")
+        XCTAssertNotNil(validDateWithNoMiliseconds, "A valid date should be created from a date format specifying a valid date")
+        XCTAssertEqual(validDateWithNoMiliseconds!.component(.year), 2021, "The year of the date should be the same as the year in the string")
+        XCTAssertEqual(validDateWithNoMiliseconds!.component(.month), 3, "The month of the date should be the same as the month in the string")
+        XCTAssertEqual(validDateWithNoMiliseconds!.component(.day), 31, "The day of the date should be the same as the day in the string")
+        XCTAssertEqual(validDateWithNoMiliseconds!.component(.hour), 21, "The hour of the date should be the same as the hour in the string")
+        XCTAssertEqual(validDateWithNoMiliseconds!.component(.minute), 42, "The minutes of the date should be the same as the minutes in the string")
+        XCTAssertEqual(validDateWithNoMiliseconds!.component(.second), 30, "The seconds of the date should be the same as the seconds in the string")
+        XCTAssertEqual(validDateWithNoMiliseconds!.component(.milisecond), 0, "The miliseconds of the date should be the same as the miliseconds in the string")
         
-        let validDateWithNanoseconds = Date(from: "2021-03-31 21:42:30.123456", format: "yyyy-MM-dd HH:mm:ss.SSSSSS")
-        XCTAssertNotNil(validDateWithNanoseconds, "A valid date should be created from a date format specifying a valid date")
-        XCTAssertEqual(validDateWithNanoseconds!.component(.year), 2021, "The year of the date should be the same as the year in the string")
-        XCTAssertEqual(validDateWithNanoseconds!.component(.month), 3, "The month of the date should be the same as the month in the string")
-        XCTAssertEqual(validDateWithNanoseconds!.component(.day), 31, "The day of the date should be the same as the day in the string")
-        XCTAssertEqual(validDateWithNanoseconds!.component(.hour), 21, "The hour of the date should be the same as the hour in the string")
-        XCTAssertEqual(validDateWithNanoseconds!.component(.minute), 42, "The minutes of the date should be the same as the minutes in the string")
-        XCTAssertEqual(validDateWithNanoseconds!.component(.second), 30, "The seconds of the date should be the same as the seconds in the string")
-        XCTAssertEqual(validDateWithNanoseconds!.component(.nanosecond), 123456, "The nanoseconds of the date should be the same as the nanoseconds in the string")
+        let validDateWithMiliseconds = Date(from: "2021-03-31 21:42:30.123", format: "yyyy-MM-dd HH:mm:ss.SSS")
+        XCTAssertNotNil(validDateWithMiliseconds, "A valid date should be created from a date format specifying a valid date")
+        XCTAssertEqual(validDateWithMiliseconds!.component(.year), 2021, "The year of the date should be the same as the year in the string")
+        XCTAssertEqual(validDateWithMiliseconds!.component(.month), 3, "The month of the date should be the same as the month in the string")
+        XCTAssertEqual(validDateWithMiliseconds!.component(.day), 31, "The day of the date should be the same as the day in the string")
+        XCTAssertEqual(validDateWithMiliseconds!.component(.hour), 21, "The hour of the date should be the same as the hour in the string")
+        XCTAssertEqual(validDateWithMiliseconds!.component(.minute), 42, "The minutes of the date should be the same as the minutes in the string")
+        XCTAssertEqual(validDateWithMiliseconds!.component(.second), 30, "The seconds of the date should be the same as the seconds in the string")
+        XCTAssertEqual(validDateWithMiliseconds!.component(.milisecond), 123, "The miliseconds of the date should be the same as the miliseconds in the string")
     }
     
     func testDate() throws {
