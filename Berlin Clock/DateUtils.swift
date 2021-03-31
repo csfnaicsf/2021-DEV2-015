@@ -10,7 +10,12 @@ import Foundation
 extension Date {
     
     init?(from string: String, format: String) {
-        return nil
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = format
+        guard let date = dateFormatter.date(from: string) else {
+            return nil
+        }
+        self.init(timeInterval: 0, since: date)
     }
     
 }
