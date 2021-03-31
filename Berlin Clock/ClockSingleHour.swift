@@ -24,6 +24,9 @@ class ClockSingleHour: ClockLampCountableProtocol {
     }
     
     func colorForLamp(at index: Int) -> UIColor {
-        return .black
+        if (index > numberOfLamps()) {
+            return .white
+        }
+        return .red
     }
 }
